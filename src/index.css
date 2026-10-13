@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-lcd: 'VT323', monospace;
+    --font-mono: 'Space Mono', monospace;
+    --font-handwriting: 'Kalam', cursive;
+    --font-display: 'Chakra Petch', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-display), sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-lcd {
+  font-family: var(--font-lcd), monospace;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting), cursive;
+}
+
+.font-retro-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Authentic LCD dot matrix pattern */
+.lcd-screen {
+  background-color: #B7C6A3;
+  color: #101112;
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.lcd-screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 15%, transparent 16%);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+/* Subtle LCD glass reflection */
+.lcd-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.0) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Physical Phone Key Button style with depth and tactile response */
+.nokia-key {
+  position: relative;
+  background: linear-gradient(180deg, #4d5054 0%, #2b2e32 100%);
+  border: 1px solid #1a1c1e;
+  border-top-color: #696d72;
+  box-shadow: 0 4px 0 #141517, 0 5px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.05s ease-out;
+}
+
+.nokia-key:active, .nokia-key-active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #141517, 0 2px 3px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, #383a3d 0%, #222426 100%);
+}
+
+.nokia-func-key {
+  background: linear-gradient(180deg, #3f4246 0%, #242629 100%);
+  border: 1px solid #18191b;
+  border-top-color: #55585d;
+  box-shadow: 0 3px 0 #0f1011, 0 4px 5px rgba(0, 0, 0, 0.35);
+}
+
+.nokia-func-key:active, .nokia-func-key-active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0f1011, 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Low battery flicker & distortion */
+@keyframes lcd-flicker {
+  0% { opacity: 0.98; filter: contrast(0.95); }
+  50% { opacity: 0.85; filter: contrast(0.85); }
+  100% { opacity: 0.98; filter: contrast(0.95); }
+}
+
+.lcd-battery-critical {
+  animation: lcd-flicker 2s infinite ease-in-out;
+  filter: contrast(0.8) brightness(0.9);
+}
+
+/* Notebook paper style */
+.notebook-paper {
+  background-color: #faf5eb;
+  background-image: linear-gradient(#e2d5c3 1px, transparent 1px);
+  background-size: 100% 28px;
+  color: #23272d;
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* Custom scrollbars for clean retro feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: #3c4046;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5c626b;
+}

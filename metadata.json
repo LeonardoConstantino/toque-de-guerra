@@ -1,0 +1,6 @@
+{
+  "name": "Toque de Guerra",
+  "description": "Jogo arcade roguelite de composição musical e duelos sonoros no recreio escolar dos anos 2000.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
